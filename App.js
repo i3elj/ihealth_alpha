@@ -1,52 +1,67 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ScrollView, Platform } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function App() {
    return (
       <View style={styles.container}>
          <View style={styles.main}>
             <View style={styles.topbar}>
-               <Pressable><Text>Home</Text></Pressable>
-               <Pressable><Text>Search</Text></Pressable>
+               <Pressable><Text style={styles.Text1}>Home</Text></Pressable>
+               {/* <Pressable style={styles.searchButton}><Text style={styles.Text2}>Search</Text></Pressable> */}
+               <Pressable style={styles.searchButton}>
+                  <Icon
+                     name='md-search'
+                     size={17}
+                  />
+               </Pressable>
             </View>
             <View style={styles.areas}>
-               <Text>Areas</Text>
+               <Text style={styles.Text3}>Areas</Text>
                <View style={styles.areasButtons}>
+                  <Pressable style={styles.subareas}>
+                     <View style={styles.subareaImage}></View>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Generalist</Text></View>
+                  </Pressable>
                   <View style={styles.subareas}>
                      <View style={styles.subareaImage}></View>
-                     <Text>Generalist</Text>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Physio</Text></View>
                   </View>
                   <View style={styles.subareas}>
                      <View style={styles.subareaImage}></View>
-                     <Text>Physiotherapist</Text>
-                  </View>
-                  <View style={styles.subareas}>
-                     <View style={styles.subareaImage}></View>
-                     <Text>Dentist</Text>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Dentist</Text></View>
                   </View>
                </View>
             </View>
             <View style={styles.categories}>
-               <Text>Categories</Text>
+               <Text style={styles.Text3}>Categories</Text>
                <View style={styles.categoriesButtons}>
                   <View style={styles.category}>
                      <View style={styles.categoryImage}></View>
-                     <Text>Pediatrician</Text>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Pediatrician</Text></View>
                   </View>
                   <View style={styles.category}>
                      <View style={styles.categoryImage}></View>
-                     <Text>Cardiologist</Text>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Cardio</Text></View>
                   </View>
                   <View style={styles.category}>
                      <View style={styles.categoryImage}></View>
-                     <Text>Endocrinologist</Text>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Endocrino</Text></View>
                   </View>
                </View>
             </View>
             <View style={styles.recommendeds}>
-               <View style={styles.recommendedsTop}>
-                  <Text>RECOMMENDEDS</Text>
-                  <Pressable><Text>filters</Text></Pressable>
+               <Text>RECOMMENDED</Text>
+               <Pressable><Text style={styles.Text5}>filters</Text></Pressable>
+            </View>
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.ScrollView}>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
@@ -56,12 +71,100 @@ export default function App() {
                      <View style={styles.clinicInfoRate}></View>
                   </View>
                </View>
-            </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+               <View style={styles.recommendedClinic}>
+                  <View style={styles.clinicImage}></View>
+                  <View style={styles.clinicInfo}>
+                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                     <Text>Description</Text>
+                     <View style={styles.clinicInfoRate}></View>
+                  </View>
+               </View>
+            </ScrollView>
          </View>
          <View style={styles.footer}>
             <Pressable></Pressable>
          </View>
-         <StatusBar style="auto" />
+         <StatusBar style="auto" hidden="true" />
       </View>
    );
 }
@@ -71,6 +174,33 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
    },
+   Text1: {
+      fontSize: 15,
+   },
+   Text2: {
+      fontSize: 15,
+   },
+   Text3: {
+      fontSize: 14,
+   },
+   Text4: {
+      fontSize: 10,
+   },
+   Text5: {
+      fontSize: 12,
+      borderWidth: 1,
+      borderRadius: 20,
+      paddingTop: 1.5,
+      paddingBottom: 1.5,
+      paddingLeft: 3,
+      paddingRight: 3,
+   },
+   // searchButton: {
+   //    borderWidth: 1,
+   //    borderRadius: 20,
+   // },
+   searchButton: {
+   },
    main: {
       flex: 1,
    },
@@ -79,6 +209,7 @@ const styles = StyleSheet.create({
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
+      alignItems: 'center',
       padding: 10,
    },
    areas:{
@@ -101,6 +232,13 @@ const styles = StyleSheet.create({
       backgroundColor: '#F9D1E4',
       borderRadius: 20,
       borderWidth: 1,
+   },
+   subareaText: {
+      backgroundColor: '#F9e1d8',
+      borderWidth: 1,
+      borderRadius: 20,
+      padding: 4,
+      transform: [{ translateY: -10}]
    },
    categories:{
       marginLeft: 20,
@@ -128,17 +266,22 @@ const styles = StyleSheet.create({
    recommendeds:{
       marginLeft: 20,
       marginRight: 20,
-      marginBottom: 20,
-   },
-   recommendedsTop:{
+      marginBottom: 8,
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
+      alignItems: 'center',
+   },
+   ScrollView: {
+      height: 12
    },
    recommendedClinic:{
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
+      marginTop: 12,
+      marginLeft: 20,
+      marginRight: 20,
    },
    clinicImage:{
       width: 50,
@@ -155,5 +298,6 @@ const styles = StyleSheet.create({
    footer:{
       backgroundColor: '#B7EFD4',
       height: 30,
+      marginTop: 12,
    },
 });
