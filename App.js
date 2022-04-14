@@ -8,7 +8,6 @@ export default function App() {
          <View style={styles.main}>
             <View style={styles.topbar}>
                <Pressable><Text style={styles.Text1}>Home</Text></Pressable>
-               {/* <Pressable style={styles.searchButton}><Text style={styles.Text2}>Search</Text></Pressable> */}
                <Pressable style={styles.searchButton}>
                   <Icon
                      name='md-search'
@@ -18,7 +17,7 @@ export default function App() {
             </View>
             <View style={styles.areas}>
                <Text style={styles.Text3}>Areas</Text>
-               <View style={styles.areasButtons}>
+               <ScrollView style={styles.areasButtons} horizontal={true} showsHorizontalScrollIndicator={false}>
                   <Pressable style={styles.subareas}>
                      <View style={styles.subareaImage}></View>
                      <View style={styles.subareaText}><Text style={styles.Text4}>Generalist</Text></View>
@@ -31,11 +30,15 @@ export default function App() {
                      <View style={styles.subareaImage}></View>
                      <View style={styles.subareaText}><Text style={styles.Text4}>Dentist</Text></View>
                   </View>
-               </View>
+                  <View style={styles.subareas}>
+                     <View style={styles.subareaImage}></View>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Dentist</Text></View>
+                  </View>
+               </ScrollView>
             </View>
             <View style={styles.categories}>
                <Text style={styles.Text3}>Categories</Text>
-               <View style={styles.categoriesButtons}>
+               <ScrollView style={styles.categoriesButtons} horizontal={true} showsHorizontalScrollIndicator={false}>
                   <View style={styles.category}>
                      <View style={styles.categoryImage}></View>
                      <View style={styles.subareaText}><Text style={styles.Text4}>Pediatrician</Text></View>
@@ -48,115 +51,167 @@ export default function App() {
                      <View style={styles.categoryImage}></View>
                      <View style={styles.subareaText}><Text style={styles.Text4}>Endocrino</Text></View>
                   </View>
-               </View>
+                  <View style={styles.category}>
+                     <View style={styles.categoryImage}></View>
+                     <View style={styles.subareaText}><Text style={styles.Text4}>Endocrino</Text></View>
+                  </View>
+               </ScrollView>
             </View>
-            <View style={styles.recommendeds}>
-               <Text>RECOMMENDED</Text>
+            <View style={styles.recommendedBar}>
+               <Text style={styles.recommendedTitle}>RECOMMENDED</Text>
                <Pressable><Text style={styles.Text5}>filters</Text></Pressable>
             </View>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.ScrollView}>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
                <View style={styles.recommendedClinic}>
                   <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
-                  </View>
-               </View>
-               <View style={styles.recommendedClinic}>
-                  <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
-                  </View>
-               </View>
-               <View style={styles.recommendedClinic}>
-                  <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
-                  </View>
-               </View>
-               <View style={styles.recommendedClinic}>
-                  <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
-                  </View>
-               </View>
-               <View style={styles.recommendedClinic}>
-                  <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
-                  </View>
-               </View>
-               <View style={styles.recommendedClinic}>
-                  <View style={styles.clinicImage}></View>
-                  <View style={styles.clinicInfo}>
-                     <View style={styles.clinicName}><Text>Clinic Name</Text></View>
-                     <Text>Description</Text>
-                     <View style={styles.clinicInfoRate}></View>
+                  <View style={styles.clinicInformations}>
+                     <View style={styles.clinicNameDescription}>
+                        <View style={styles.clinicName}><Text>Clinic Name</Text></View>
+                        <Text style={styles.clinicDescription}>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        </Text>
+                     </View>
+                     <View style={styles.clinicInfoDetails}>
+                        <View style={styles.clinicInfoRate}>
+                           <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/> <Icon name='star'/>
+                        </View>
+                        <Text style={styles.clinicInfoLocation}><Icon name='location'/>97 Pierce St. Chester, PA</Text>
+                        <Text style={styles.clinicInfoDistance}>2 km</Text>
+                     </View>
                   </View>
                </View>
             </ScrollView>
@@ -194,6 +249,8 @@ const styles = StyleSheet.create({
       paddingBottom: 1.5,
       paddingLeft: 3,
       paddingRight: 3,
+      color: '#C4C4C4',
+      borderColor: '#C4C4C4',
    },
    // searchButton: {
    //    borderWidth: 1,
@@ -213,18 +270,20 @@ const styles = StyleSheet.create({
       padding: 10,
    },
    areas:{
-      margin: 20,
+      marginTop: 20,
+      marginBottom: 20,
+      marginLeft: 20,
    },
    areasButtons: {
       display: 'flex',
       flexDirection: 'row',
       marginTop: 10,
-      justifyContent: 'space-between',
    },
    subareas:{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      marginRight: 14
    },
    subareaImage: {
       width: 100,
@@ -242,19 +301,18 @@ const styles = StyleSheet.create({
    },
    categories:{
       marginLeft: 20,
-      marginRight: 20,
       marginBottom: 20,
    },
    categoriesButtons:{
       display: 'flex',
       flexDirection: 'row',
       marginTop: 10,
-      justifyContent: 'space-between',
    },
    category:{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      marginRight: 14
    },
    categoryImage:{
       width: 100,
@@ -263,7 +321,7 @@ const styles = StyleSheet.create({
       borderRadius: 20,
       borderWidth: 1,
    },
-   recommendeds:{
+   recommendedBar:{
       marginLeft: 20,
       marginRight: 20,
       marginBottom: 8,
@@ -271,6 +329,9 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+   },
+   recommendedTitle: {
+      color: '#919191',
    },
    ScrollView: {
       height: 12
@@ -283,21 +344,49 @@ const styles = StyleSheet.create({
       marginLeft: 20,
       marginRight: 20,
    },
+   clinicInformations: {
+      flex: 1,
+   },
    clinicImage:{
-      width: 50,
-      height: 50,
+      width: 70,
+      height: 70,
       backgroundColor: '#B7EFD4',
       borderRadius: 50,
       marginRight: 20,
    },
-   clinicInfo:{},
+   clinicNameDescription:{
+      flex: 1,
+   },
    clinicName:{
       marginBottom: 5,
    },
-   clinicInfoRate:{},
+   clinicDescription: {
+      color: '#464646',
+      textAlign: 'justify',
+      fontSize: 11,
+   },
+   clinicInfoDetails:{
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginTop: 5,
+   },
+   clinicInfoRate:{
+      display: 'flex',
+      flexDirection: 'row',
+   },
+   clinicInfoLocation:{
+      fontSize: 10,
+      color: '#848484',
+   },
+   clinicInfoDistance:{
+      fontSize: 11,
+      color: '#848484',
+   },
    footer:{
       backgroundColor: '#B7EFD4',
       height: 30,
-      marginTop: 12,
+      // marginTop: 12,
    },
 });
