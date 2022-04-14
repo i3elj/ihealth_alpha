@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, ScrollView, Platform } from 'react-native';
+import { StyleSheet, Text, View, Pressable, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
                   <Icon
                      name='md-search'
                      size={17}
-                  />
+                     />
                </Pressable>
             </View>
             <View style={styles.areas}>
@@ -217,7 +217,7 @@ export default function App() {
             </ScrollView>
          </View>
          <View style={styles.footer}>
-            <Pressable></Pressable>
+            <Pressable><Icon style={styles.footerIcon} name='chevron-up-outline'/></Pressable>
          </View>
          <StatusBar style="auto" hidden="true" />
       </View>
@@ -252,10 +252,6 @@ const styles = StyleSheet.create({
       color: '#C4C4C4',
       borderColor: '#C4C4C4',
    },
-   // searchButton: {
-   //    borderWidth: 1,
-   //    borderRadius: 20,
-   // },
    searchButton: {
    },
    main: {
@@ -340,7 +336,7 @@ const styles = StyleSheet.create({
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
-      marginTop: 12,
+      marginBottom: 12,
       marginLeft: 20,
       marginRight: 20,
    },
@@ -385,8 +381,16 @@ const styles = StyleSheet.create({
       color: '#848484',
    },
    footer:{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       backgroundColor: '#B7EFD4',
-      height: 30,
-      // marginTop: 12,
+      borderTopEndRadius: 18,
+      borderTopStartRadius: 18,
    },
+   footerIcon: {
+      transform: [{ translateY: -2}],
+      fontSize: 28,
+      color: 'rgb(145, 145, 145)',
+   }
 });
